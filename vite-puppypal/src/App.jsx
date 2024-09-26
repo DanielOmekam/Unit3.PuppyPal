@@ -6,9 +6,27 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [dog, setDog] = useState("");
+  console.log(dog);
+ 
+
 
   return (
     <>
+      <div className = "Puppy">
+        <h3>Name:{dog.name}</h3>
+        <p>Age: {dog.age} <br></br> Email: {dog.email}</p>
+        </div>
+        {puppyList.map((puppy, idx) => {
+          return(
+            <p key={idx} onClick={() => setDog(puppy)} >
+              {puppy.name}
+              </p>
+
+          );
+        })}
+      
+
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
